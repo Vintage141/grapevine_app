@@ -1,3 +1,5 @@
+The app can be found [here](http://grapevineim.herokuapp.com/)
+
 Make sure you have postgres installed on your machine.
 
 You will need to run the following commands to get the project up on your local environment after you install rails.
