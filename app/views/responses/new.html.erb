@@ -1,0 +1,64 @@
+<nav class="navbar navbar-default" role="navigation">
+   <div class="container">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+         <span class="sr-only">Toggle navigation</span>
+         </button>
+         <a class="navbar-brand" href=<%= root_path %>>grapevine.im</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-01">
+         <ul class="nav navbar-nav">
+            <li class="active"><a href="#fakelink">Products</a></li>
+            <li><a href="#fakelink">Features</a></li>
+         </ul>
+         <form class="navbar-form navbar-right" action="#" role="search">
+            <div class="form-group">
+               <div class="input-group">
+                  <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+                  <span class="input-group-btn">
+                  <button type="submit" class="btn"><span class="fui-search"></span></button>
+                  </span>            
+               </div>
+            </div>
+         </form>
+      </div>
+      <!-- /.navbar-collapse -->
+   </div>
+</nav>
+<!-- /navbar -->
+<div class="container">
+   <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flipper col-md-9">
+         <div class="front">
+            <!-- front content -->
+            <div class="well">
+               <h2 id="asks"><%= @user.email %></h2>
+               <h3><%= @card.question %></h3>
+               <form role="form">
+                  <div class="form-group">
+                     <textarea></textarea>
+                     <div id="reply-buttons"><button type="button" class="btn btn-default btn-wide btn-embossed"><i class="fa fa-reply"></i> Reply Anonymously</button>
+                        <button type="button" class="btn btn-primary btn-wide btn-embossed"><i class="fa fa-facebook-square"></i> Connect With Facebook</button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <div class="back">
+            <!-- back content -->
+            <div class="well">
+               <h2 id="asks"><%= @user.email %></h2>
+               <h3><%= @card.question %></h3>
+                   <%= simple_form_for @response do |f| %>
+                     <%= f.input :answer, label: false %>
+                     <%= button_tag(type: 'submit', class: "btn btn-default btn-wide btn-embossed") do %>
+                        <i class="fa fa-reply"></i> Reply Anonymously
+                     <% end %>
+                   <% end %>
+                        <button type="button" class="btn btn-primary btn-wide btn-embossed"><i class="fa fa-facebook-square"></i> Connect With Facebook</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

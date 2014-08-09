@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @card.user_id %>
+  <strong>User Email:</strong>
+  <%= @card.user.email %>
 </p>
 
 <p>
@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>Token:</strong>
-  <%= @card.token %>
+  <strong>Url:</strong>
+  <%= link_to 'Enter responses here', new_response_path(@card.token) %>
 </p>
 
 <%= link_to 'Edit', edit_card_path(@card) %> |

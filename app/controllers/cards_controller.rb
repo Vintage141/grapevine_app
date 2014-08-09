@@ -25,6 +25,8 @@ class CardsController < ApplicationController
   # POST /cards.json
   def create
     @card = Card.new(card_params)
+    @card.token = (0...10).map { ('a'..'z').to_a[rand(10)] }.join
+    @card.create_user(email: params[:card][:user][:email])
 
     respond_to do |format|
       if @card.save
@@ -69,6 +71,6 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:user_id, :question, :token)
+      params.require(:card).permit(:user_id, :question)
     end
 end

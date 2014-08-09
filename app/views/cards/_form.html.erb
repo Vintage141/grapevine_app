@@ -11,19 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :question %><br>
-    <%= f.text_area :question %>
-  </div>
-  <div class="field">
-    <%= f.label :token %><br>
-    <%= f.text_field :token %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= simple_form_for @card do |f| %>
+      <%= f.input :question %>
+      <%= f.simple_fields_for :user do |p| %>
+        <%= p.input :email %>
+      <% end %>
+      <%= f.button :submit %>
+    <% end %>
+
 <% end %>
