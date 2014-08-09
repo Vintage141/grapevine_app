@@ -9,7 +9,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jbuilder'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'sass-rails'
+gem 'sass-rails', '>= 3.2'
 gem 'autoprefixer-rails'
 
 group :production do
