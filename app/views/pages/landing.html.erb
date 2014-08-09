@@ -4,7 +4,8 @@
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
       <span class="sr-only">Toggle navigation</span>
     </button>
-    <a class="navbar-brand" href="#">grapevine.im</a>
+    <%= link_to 'grapevine.im', root_path, class: "navbar-brand" %>
+    <%= link_to 'Ask a question', new_card_path, class: "navbar-brand" %>
   </div>
   <div class="collapse navbar-collapse" id="navbar-collapse-01">
     <ul class="nav navbar-nav navbar-right">          
