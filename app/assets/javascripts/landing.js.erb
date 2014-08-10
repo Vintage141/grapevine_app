@@ -1,11 +1,11 @@
-$.backstretch([
-   "<%= image_path 'background_1.jpg' %>",
-   "<%= image_path 'background_2.jpg' %>",
-   "<%= image_path 'background_3.jpg' %>",
-   "<%= image_path 'background_4.jpg' %>"
-], {duration: 3000, fade: 750});
-
 $(document).ready(function() {
+
+  $.backstretch([
+     "<%= image_path 'background_1.jpg' %>",
+     "<%= image_path 'background_2.jpg' %>",
+     "<%= image_path 'background_3.jpg' %>",
+     "<%= image_path 'background_4.jpg' %>"
+  ], {duration: 3000, fade: 750});
 
   function loading() {
     $('.result').show().html('Loading...');
