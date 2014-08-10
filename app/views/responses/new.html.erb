@@ -51,6 +51,7 @@
                <h3><%= @card.question %></h3>
                    <%= simple_form_for @response do |f| %>
                      <%= f.input :answer, label: false %>
+                     <%= f.hidden_field :card_id, :value => @card.id %>
                      <%= button_tag(type: 'submit', class: "btn btn-default btn-wide btn-embossed") do %>
                         <i class="fa fa-reply"></i> Reply Anonymously
                      <% end %>

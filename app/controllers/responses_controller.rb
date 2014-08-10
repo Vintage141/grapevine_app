@@ -26,7 +26,9 @@ class ResponsesController < ApplicationController
   # POST /responses
   # POST /responses.json
   def create
+    @card = Card.find(params[:response][:card_id])
     @response = Response.new(response_params)
+    ResponseMailer.send_response(@card.user.email, @card.question, @response.answer).deliver
 
     respond_to do |format|
       if @response.save
