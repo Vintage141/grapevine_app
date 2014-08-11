@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User Email:</strong>
+  <%= @card.user.email %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @card.question %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= link_to 'Enter responses here', new_response_path(@card.token) %>
+</p>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

@@ -1,4 +1,12 @@
 GrapevineApp::Application.routes.draw do
+  resources :responses, except: [:new]
+  get 'response/:token' => 'responses#new', as: :new_response
+
+  resources :users
+
+  resources :cards
+
+  root 'pages#landing'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
